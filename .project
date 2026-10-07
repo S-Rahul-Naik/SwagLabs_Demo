@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
+	<name>SwagLabs_Demo</name>
+=======
 	<name>Swag_Labs_Demo</name>
+>>>>>>> 0da01de491878dc094333505c9b9f4f22eb7eb9e
 	<comment></comment>
 	<projects>
 	</projects>
