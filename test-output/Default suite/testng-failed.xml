@@ -6,9 +6,10 @@
       <class name="ecomSwaglabsLogin.TestCase1">
         <methods>
           <include name="dbConnection"/>
+          <include name="invalidLoginTest" invocation-numbers="0 1 2 3 4"/>
           <include name="navigateTOApp"/>
           <include name="bt"/>
-          <include name="validLoginTest" invocation-numbers="0 1 2 3 4"/>
+          <include name="validLoginTest" invocation-numbers="3 4"/>
         </methods>
       </class> <!-- ecomSwaglabsLogin.TestCase1 -->
     </classes>

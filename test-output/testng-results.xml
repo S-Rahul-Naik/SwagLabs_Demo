@@ -11,26 +11,26 @@
       <![CDATA[Before Class]]>
     </line>
   </reporter-output>
-  <suite started-at="2026-10-07T21:04:02 IST" name="Default suite" finished-at="2026-10-07T21:04:48 IST" duration-ms="46518">
+  <suite started-at="2026-10-07T21:45:07 IST" name="Default suite" finished-at="2026-10-07T21:45:54 IST" duration-ms="46699">
     <groups>
     </groups>
-    <test started-at="2026-10-07T21:04:02 IST" name="Default test" finished-at="2026-10-07T21:04:48 IST" duration-ms="46518">
+    <test started-at="2026-10-07T21:45:07 IST" name="Default test" finished-at="2026-10-07T21:45:54 IST" duration-ms="46699">
       <class name="ecomSwaglabsLogin.TestCase1">
-        <test-method is-config="true" signature="dbConnection()[pri:0, instance:ecomSwaglabsLogin.TestCase1@3fc2959f]" started-at="2026-10-07T21:04:02 IST" name="dbConnection" finished-at="2026-10-07T21:04:02 IST" duration-ms="12" status="PASS">
+        <test-method is-config="true" signature="dbConnection()[pri:0, instance:ecomSwaglabsLogin.TestCase1@3fc2959f]" started-at="2026-10-07T21:45:07 IST" name="dbConnection" finished-at="2026-10-07T21:45:07 IST" duration-ms="15" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Before Suite]]>
             </line>
           </reporter-output>
         </test-method> <!-- dbConnection -->
-        <test-method is-config="true" signature="bt()[pri:0, instance:ecomSwaglabsLogin.TestCase1@3fc2959f]" started-at="2026-10-07T21:04:02 IST" name="bt" finished-at="2026-10-07T21:04:02 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="bt()[pri:0, instance:ecomSwaglabsLogin.TestCase1@3fc2959f]" started-at="2026-10-07T21:45:07 IST" name="bt" finished-at="2026-10-07T21:45:07 IST" duration-ms="1" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Before Test]]>
             </line>
           </reporter-output>
         </test-method> <!-- bt -->
-        <test-method is-config="true" signature="navigateTOApp(java.lang.String)[pri:0, instance:ecomSwaglabsLogin.TestCase1@3fc2959f]" started-at="2026-10-07T21:04:02 IST" name="navigateTOApp" finished-at="2026-10-07T21:04:04 IST" duration-ms="2743" status="PASS">
+        <test-method is-config="true" signature="navigateTOApp(java.lang.String)[pri:0, instance:ecomSwaglabsLogin.TestCase1@3fc2959f]" started-at="2026-10-07T21:45:07 IST" name="navigateTOApp" finished-at="2026-10-07T21:45:10 IST" duration-ms="2627" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -44,7 +44,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- navigateTOApp -->
-        <test-method signature="validLoginTest(java.lang.String,java.lang.String)[pri:0, instance:ecomSwaglabsLogin.TestCase1@3fc2959f]" started-at="2026-10-07T21:04:05 IST" name="validLoginTest" data-provider="ValidCredentials" finished-at="2026-10-07T21:04:11 IST" duration-ms="5455" status="PASS">
+        <test-method signature="validLoginTest(java.lang.String,java.lang.String)[pri:0, instance:ecomSwaglabsLogin.TestCase1@3fc2959f]" started-at="2026-10-07T21:45:11 IST" name="validLoginTest" data-provider="ValidCredentials" finished-at="2026-10-07T21:45:16 IST" duration-ms="5475" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -60,7 +60,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validLoginTest -->
-        <test-method signature="validLoginTest(java.lang.String,java.lang.String)[pri:0, instance:ecomSwaglabsLogin.TestCase1@3fc2959f]" started-at="2026-10-07T21:04:11 IST" name="validLoginTest" data-provider="ValidCredentials" finished-at="2026-10-07T21:04:16 IST" duration-ms="5338" status="PASS">
+        <test-method signature="validLoginTest(java.lang.String,java.lang.String)[pri:0, instance:ecomSwaglabsLogin.TestCase1@3fc2959f]" started-at="2026-10-07T21:45:16 IST" name="validLoginTest" data-provider="ValidCredentials" finished-at="2026-10-07T21:45:22 IST" duration-ms="5388" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -76,7 +76,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validLoginTest -->
-        <test-method signature="validLoginTest(java.lang.String,java.lang.String)[pri:0, instance:ecomSwaglabsLogin.TestCase1@3fc2959f]" started-at="2026-10-07T21:04:16 IST" name="validLoginTest" data-provider="ValidCredentials" finished-at="2026-10-07T21:04:26 IST" duration-ms="10413" status="PASS">
+        <test-method signature="validLoginTest(java.lang.String,java.lang.String)[pri:0, instance:ecomSwaglabsLogin.TestCase1@3fc2959f]" started-at="2026-10-07T21:45:22 IST" name="validLoginTest" data-provider="ValidCredentials" finished-at="2026-10-07T21:45:32 IST" duration-ms="10419" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -92,7 +92,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validLoginTest -->
-        <test-method signature="validLoginTest(java.lang.String,java.lang.String)[pri:0, instance:ecomSwaglabsLogin.TestCase1@3fc2959f]" started-at="2026-10-07T21:04:26 IST" name="validLoginTest" data-provider="ValidCredentials" finished-at="2026-10-07T21:04:32 IST" duration-ms="5404" status="PASS">
+        <test-method signature="validLoginTest(java.lang.String,java.lang.String)[pri:0, instance:ecomSwaglabsLogin.TestCase1@3fc2959f]" started-at="2026-10-07T21:45:32 IST" name="validLoginTest" data-provider="ValidCredentials" finished-at="2026-10-07T21:45:38 IST" duration-ms="5485" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -108,7 +108,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validLoginTest -->
-        <test-method signature="validLoginTest(java.lang.String,java.lang.String)[pri:0, instance:ecomSwaglabsLogin.TestCase1@3fc2959f]" started-at="2026-10-07T21:04:32 IST" name="validLoginTest" data-provider="ValidCredentials" finished-at="2026-10-07T21:04:37 IST" duration-ms="5334" status="PASS">
+        <test-method signature="validLoginTest(java.lang.String,java.lang.String)[pri:0, instance:ecomSwaglabsLogin.TestCase1@3fc2959f]" started-at="2026-10-07T21:45:38 IST" name="validLoginTest" data-provider="ValidCredentials" finished-at="2026-10-07T21:45:43 IST" duration-ms="5372" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -124,7 +124,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validLoginTest -->
-        <test-method signature="invalidLoginTest(java.lang.String,java.lang.String)[pri:1, instance:ecomSwaglabsLogin.TestCase1@3fc2959f]" started-at="2026-10-07T21:04:37 IST" name="invalidLoginTest" data-provider="InvalidCredentials" finished-at="2026-10-07T21:04:39 IST" duration-ms="2194" status="PASS">
+        <test-method signature="invalidLoginTest(java.lang.String,java.lang.String)[pri:1, instance:ecomSwaglabsLogin.TestCase1@3fc2959f]" started-at="2026-10-07T21:45:43 IST" name="invalidLoginTest" data-provider="InvalidCredentials" finished-at="2026-10-07T21:45:45 IST" duration-ms="2195" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -140,7 +140,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidLoginTest -->
-        <test-method signature="invalidLoginTest(java.lang.String,java.lang.String)[pri:1, instance:ecomSwaglabsLogin.TestCase1@3fc2959f]" started-at="2026-10-07T21:04:39 IST" name="invalidLoginTest" data-provider="InvalidCredentials" finished-at="2026-10-07T21:04:42 IST" duration-ms="2190" status="PASS">
+        <test-method signature="invalidLoginTest(java.lang.String,java.lang.String)[pri:1, instance:ecomSwaglabsLogin.TestCase1@3fc2959f]" started-at="2026-10-07T21:45:45 IST" name="invalidLoginTest" data-provider="InvalidCredentials" finished-at="2026-10-07T21:45:47 IST" duration-ms="2200" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -156,7 +156,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidLoginTest -->
-        <test-method signature="invalidLoginTest(java.lang.String,java.lang.String)[pri:1, instance:ecomSwaglabsLogin.TestCase1@3fc2959f]" started-at="2026-10-07T21:04:42 IST" name="invalidLoginTest" data-provider="InvalidCredentials" finished-at="2026-10-07T21:04:44 IST" duration-ms="2191" status="PASS">
+        <test-method signature="invalidLoginTest(java.lang.String,java.lang.String)[pri:1, instance:ecomSwaglabsLogin.TestCase1@3fc2959f]" started-at="2026-10-07T21:45:47 IST" name="invalidLoginTest" data-provider="InvalidCredentials" finished-at="2026-10-07T21:45:50 IST" duration-ms="2215" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -172,7 +172,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidLoginTest -->
-        <test-method signature="invalidLoginTest(java.lang.String,java.lang.String)[pri:1, instance:ecomSwaglabsLogin.TestCase1@3fc2959f]" started-at="2026-10-07T21:04:44 IST" name="invalidLoginTest" data-provider="InvalidCredentials" finished-at="2026-10-07T21:04:46 IST" duration-ms="2182" status="PASS">
+        <test-method signature="invalidLoginTest(java.lang.String,java.lang.String)[pri:1, instance:ecomSwaglabsLogin.TestCase1@3fc2959f]" started-at="2026-10-07T21:45:50 IST" name="invalidLoginTest" data-provider="InvalidCredentials" finished-at="2026-10-07T21:45:52 IST" duration-ms="2196" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -188,7 +188,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidLoginTest -->
-        <test-method signature="invalidLoginTest(java.lang.String,java.lang.String)[pri:1, instance:ecomSwaglabsLogin.TestCase1@3fc2959f]" started-at="2026-10-07T21:04:46 IST" name="invalidLoginTest" data-provider="InvalidCredentials" finished-at="2026-10-07T21:04:48 IST" duration-ms="2170" status="PASS">
+        <test-method signature="invalidLoginTest(java.lang.String,java.lang.String)[pri:1, instance:ecomSwaglabsLogin.TestCase1@3fc2959f]" started-at="2026-10-07T21:45:52 IST" name="invalidLoginTest" data-provider="InvalidCredentials" finished-at="2026-10-07T21:45:54 IST" duration-ms="2218" status="PASS">
           <params>
             <param index="0">
               <value>

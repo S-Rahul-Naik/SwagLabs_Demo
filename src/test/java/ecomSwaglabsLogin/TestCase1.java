@@ -22,7 +22,6 @@ public class TestCase1 extends BaseClass {
         ExcelUtility eu = new ExcelUtility();
         return eu.ValidCredentials();
     }
-
     @Test(dataProvider = "ValidCredentials")
     public void validLoginTest(String username, String password) throws InterruptedException {
     		LoginPage lg = new LoginPage(driver);
@@ -42,7 +41,6 @@ public class TestCase1 extends BaseClass {
 	public void invalidLoginTest(String username, String password) throws InterruptedException {
 	    LoginPage lp = new LoginPage(driver);
 	    lp.login(username, password);
-
 	    
 	    	}
     
