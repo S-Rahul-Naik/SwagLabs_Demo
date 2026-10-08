@@ -61,4 +61,10 @@ public class HamburgerMenuPage {
                 ExpectedConditions.elementToBeClickable(resetAppState)
         ).click();
     }
+    @FindBy(id = "react-burger-cross-btn")
+    private WebElement closeMenu;
+
+    public void closeMenu() {
+        closeMenu.click();
+    }
 }

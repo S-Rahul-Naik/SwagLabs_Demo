@@ -40,7 +40,7 @@ public class Checkout_TestCase extends BaseClass {
     // Verify Checkout Information fields and controls
     // =========================================================
 
-    @Test
+    @Test(priority=1)
     public void verifyCheckoutInformationFields() {
 
         goToCheckoutInformation();
@@ -74,7 +74,7 @@ public class Checkout_TestCase extends BaseClass {
     // Verify valid checkout information is accepted
     // =========================================================
 
-    @Test(dataProvider = "positiveCheckoutData")
+    @Test(priority=2,dataProvider = "positiveCheckoutData")
     public void verifyValidCheckoutInformation(
             String firstName,
             String lastName,
@@ -105,7 +105,7 @@ public class Checkout_TestCase extends BaseClass {
     // Verify Checkout Overview product visibility and controls
     // =========================================================
 
-    @Test(dataProvider = "positiveCheckoutData")
+    @Test(priority=3,dataProvider = "positiveCheckoutData")
     public void verifyCheckoutOverview(
             String firstName,
             String lastName,
@@ -145,7 +145,7 @@ public class Checkout_TestCase extends BaseClass {
     // Verify Checkout Complete page and Back Home
     // =========================================================
 
-    @Test(dataProvider = "positiveCheckoutData")
+    @Test(priority=4,dataProvider = "positiveCheckoutData")
     public void verifyCheckoutCompleteAndBackHome(
             String firstName,
             String lastName,
@@ -194,7 +194,7 @@ public class Checkout_TestCase extends BaseClass {
     // Checkout Information → Overview integration
     // =========================================================
 
-    @Test(dataProvider = "positiveCheckoutData")
+    @Test(priority=5,dataProvider = "positiveCheckoutData")
     public void verifyCheckoutInformationToOverview(
             String firstName,
             String lastName,
@@ -228,7 +228,7 @@ public class Checkout_TestCase extends BaseClass {
     // Overview → Complete integration
     // =========================================================
 
-    @Test(dataProvider = "positiveCheckoutData")
+    @Test(priority=6,dataProvider = "positiveCheckoutData")
     public void verifyOverviewToComplete(
             String firstName,
             String lastName,
@@ -264,7 +264,7 @@ public class Checkout_TestCase extends BaseClass {
     // Complete → Home integration
     // =========================================================
 
-    @Test(dataProvider = "positiveCheckoutData")
+    @Test(priority=7,dataProvider = "positiveCheckoutData")
     public void verifyCompleteToHome(
             String firstName,
             String lastName,
@@ -305,7 +305,7 @@ public class Checkout_TestCase extends BaseClass {
     // Blank First Name
     // =========================================================
 
-    @Test(dataProvider = "negativeCheckoutData")
+    @Test(priority=8,dataProvider = "negativeCheckoutData")
     public void verifyBlankFirstName(
             String firstName,
             String lastName,
@@ -336,7 +336,7 @@ public class Checkout_TestCase extends BaseClass {
     // Blank Last Name
     // =========================================================
 
-    @Test(dataProvider = "negativeCheckoutData")
+    @Test(priority=9,dataProvider = "negativeCheckoutData")
     public void verifyBlankLastName(
             String firstName,
             String lastName,
@@ -367,7 +367,7 @@ public class Checkout_TestCase extends BaseClass {
     // Invalid / Blank Postal Code
     // =========================================================
 
-    @Test(dataProvider = "negativeCheckoutData")
+    @Test(priority=10,dataProvider = "negativeCheckoutData")
     public void verifyInvalidPostalCode(
             String firstName,
             String lastName,
@@ -398,7 +398,7 @@ public class Checkout_TestCase extends BaseClass {
     // Checkout regression flow
     // =========================================================
 
-    @Test(dataProvider = "positiveCheckoutData")
+    @Test(priority=11,dataProvider = "positiveCheckoutData")
     public void checkoutRegressionFlow(
             String firstName,
             String lastName,
@@ -437,7 +437,7 @@ public class Checkout_TestCase extends BaseClass {
     // Complete system purchase flow
     // =========================================================
 
-    @Test(dataProvider = "positiveCheckoutData")
+    @Test(priority=12,dataProvider = "positiveCheckoutData")
     public void completeSystemPurchaseFlow(
             String firstName,
             String lastName,
@@ -473,7 +473,7 @@ public class Checkout_TestCase extends BaseClass {
     // Boundary Value Analysis
     // =========================================================
 
-    @Test(dataProvider = "boundaryCheckoutData")
+    @Test(priority=13,dataProvider = "boundaryCheckoutData")
     public void verifyCheckoutBoundaryValues(
             String firstName,
             String lastName,

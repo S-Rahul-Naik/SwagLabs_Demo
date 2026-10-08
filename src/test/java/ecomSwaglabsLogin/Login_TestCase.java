@@ -20,7 +20,7 @@ public class Login_TestCase extends LoginBaseClass {
     // Verify Username, Password and Login controls are displayed
     // ============================================================
 
-    @Test(groups = {"FT", "SMT", "Pos"})
+    @Test(priority=1,groups = {"FT", "SMT", "Pos"})
     public void verifyLoginControlsDisplayed() {
 
         LoginPage lp = new LoginPage(driver);
@@ -63,7 +63,7 @@ public class Login_TestCase extends LoginBaseClass {
     // Verify login with valid credentials
     // ============================================================
 
-    @Test(
+    @Test(priority=2,
             dataProvider = "ValidCredentials",
             groups = {"FT", "SMT", "Pos"}
     )
@@ -93,7 +93,7 @@ public class Login_TestCase extends LoginBaseClass {
     // Verify Login navigates to Product Page
     // ============================================================
 
-    @Test(
+    @Test(priority=3,
             dataProvider = "ValidCredentials",
             groups = {"FT", "Pos"}
     )
@@ -141,7 +141,7 @@ public class Login_TestCase extends LoginBaseClass {
     // Both are covered by InvalidData Excel sheet.
     // ============================================================
 
-    @Test(
+    @Test(priority=4,
             dataProvider = "InvalidCredentials",
             groups = {"FT", "Neg"}
     )
@@ -188,7 +188,7 @@ public class Login_TestCase extends LoginBaseClass {
     // Blank values come ONLY from Excel.
     // ============================================================
 
-    @Test(
+    @Test(priority=5,
             dataProvider = "BlankLoginData",
             groups = {"FT", "Neg"}
     )
@@ -214,7 +214,7 @@ public class Login_TestCase extends LoginBaseClass {
     // Verify Login Smoke Test
     // ============================================================
 
-    @Test(
+    @Test(priority=6,
             dataProvider = "ValidCredentials",
             groups = {"FT", "SMT", "Smoke", "Pos"}
     )
@@ -243,7 +243,7 @@ public class Login_TestCase extends LoginBaseClass {
     // Verify Login Regression after application changes
     // ============================================================
 
-    @Test(
+    @Test(priority=7,
             dataProvider = "ValidCredentials",
             groups = {"FT", "Regression", "Pos"}
     )
@@ -286,7 +286,7 @@ public class Login_TestCase extends LoginBaseClass {
     // Verify Login input at boundary conditions
     // ============================================================
 
-    @Test(
+    @Test(priority=8,
             dataProvider = "BoundaryLoginData",
             groups = {"FT", "BVA"}
     )

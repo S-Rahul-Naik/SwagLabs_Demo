@@ -22,7 +22,7 @@ public class Product_TestCase extends BaseClass {
     // TC-PROD-01
     // Verify products are visible on Product Page
     // =========================================================
-    @Test(groups = {"FT", "SMT", "Pos"})
+    @Test(priority=1,groups = {"FT", "SMT", "Pos"})
     public void verifyProductsAreVisible() {
 
         ProductPage pp = new ProductPage(driver);
@@ -68,7 +68,7 @@ public class Product_TestCase extends BaseClass {
     // TC-PROD-02
     // Verify Add to Cart and Cart Logo behavior
     // =========================================================
-    @Test(
+    @Test(priority=2,
             dataProvider = "ProductName",
             groups = {"FT", "SMT", "Pos"}
     )
@@ -100,7 +100,7 @@ public class Product_TestCase extends BaseClass {
     // TC-PROD-03
     // Product Page -> Cart Page
     // =========================================================
-    @Test(
+    @Test(priority=3,
             dataProvider = "ProductName",
             groups = {"FT", "Pos"}
     )
@@ -138,7 +138,7 @@ public class Product_TestCase extends BaseClass {
     // TC-PROD-04
     // Verify Add to Cart after product removal
     // =========================================================
-    @Test(
+    @Test(priority=4,
             dataProvider = "ProductName",
             groups = {"FT", "Neg"}
     )
@@ -193,7 +193,7 @@ public class Product_TestCase extends BaseClass {
     // TC-PROD-05
     // Verify cart navigation without selected product
     // =========================================================
-    @Test(groups = {"FT", "Neg"})
+    @Test(priority=5,groups = {"FT", "Neg"})
     public void verifyEmptyCartNavigation() {
 
         ProductPage pp = new ProductPage(driver);
@@ -229,7 +229,7 @@ public class Product_TestCase extends BaseClass {
     // TC-PROD-06
     // Product Page Smoke Test
     // =========================================================
-    @Test(
+    @Test(priority=6,
             dataProvider = "ProductName",
             groups = {"FT", "SMT", "Pos"}
     )
@@ -257,7 +257,7 @@ public class Product_TestCase extends BaseClass {
     // TC-PROD-07
     // Filter dropdown smoke test
     // =========================================================
-    @Test(groups = {"FT", "SMT", "Pos"})
+    @Test(priority=7,groups = {"FT", "SMT", "Pos"})
     public void verifyFilterDropdownSmokeTest() {
 
         ProductPage pp = new ProductPage(driver);
@@ -283,7 +283,7 @@ public class Product_TestCase extends BaseClass {
     // TC-PROD-08
     // Verify product visibility after sorting
     // =========================================================
-    @Test(groups = {"FT", "Pos"})
+    @Test(priority=8,groups = {"FT", "Pos"})
     public void verifyProductVisibilityAfterSorting() {
 
         ProductPage pp = new ProductPage(driver);
@@ -418,7 +418,7 @@ public class Product_TestCase extends BaseClass {
     // TC-PROD-09
     // Add to Cart after changing filter
     // =========================================================
-    @Test(
+    @Test(priority=9,
             dataProvider = "ProductName",
             groups = {"FT", "Pos"}
     )
@@ -453,7 +453,7 @@ public class Product_TestCase extends BaseClass {
     // TC-PROD-10
     // Cart Logo Boundary: 0 -> 1 -> 0
     // =========================================================
-    @Test(
+    @Test(priority=10,
             dataProvider = "ProductName",
             groups = {"FT", "Pos"}
     )

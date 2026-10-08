@@ -12,7 +12,7 @@ public class Hamberger_TestCase extends BaseClass {
 
     // TC-HAM-01
     // Verify Hamburger menu options are displayed
-    @Test
+    @Test(priority=1)
     public void verifyHamburgerMenuOptionsDisplayed() {
 
         ProductPage product = new ProductPage(driver);
@@ -33,7 +33,7 @@ public class Hamberger_TestCase extends BaseClass {
 
     // TC-HAM-02
     // Verify Reset App State removes added product
-    @Test
+    @Test(priority=2)
     public void verifyResetAppStateRemovesProduct() {
 
         ProductPage product = new ProductPage(driver);
@@ -55,7 +55,7 @@ public class Hamberger_TestCase extends BaseClass {
 
     // TC-HAM-03
     // Verify Logout navigates to Login Page
-    @Test
+    @Test(priority=3)
     public void verifyLogoutNavigatesToLoginPage() {
 
         ProductPage product = new ProductPage(driver);
@@ -74,7 +74,7 @@ public class Hamberger_TestCase extends BaseClass {
 
     // TC-HAM-04
     // Verify Reset App State with no cart item
-    @Test
+    @Test(priority=4)
     public void verifyResetAppStateWithEmptyCart() {
 
         ProductPage product = new ProductPage(driver);
@@ -94,7 +94,7 @@ public class Hamberger_TestCase extends BaseClass {
 
     // TC-HAM-05
     // Verify menu action after logout is not accessible
-    @Test
+    @Test(priority=5)
     public void verifyHamburgerNotAccessibleAfterLogout() {
 
         ProductPage product = new ProductPage(driver);
@@ -111,7 +111,7 @@ public class Hamberger_TestCase extends BaseClass {
 
     // TC-HAM-06
     // Hamburger menu smoke test
-    @Test
+    @Test(priority=6)
     public void hamburgerMenuSmokeTest() {
 
         ProductPage product = new ProductPage(driver);
@@ -132,7 +132,7 @@ public class Hamberger_TestCase extends BaseClass {
 
     // TC-HAM-07
     // Verify Reset App State smoke test
-    @Test
+    @Test(priority=7)
     public void resetAppStateSmokeTest() {
 
         ProductPage product = new ProductPage(driver);
@@ -154,7 +154,7 @@ public class Hamberger_TestCase extends BaseClass {
 
     // TC-HAM-08
     // Verify Logout after navigating through Product and Cart
-    @Test
+    @Test(priority=8)
     public void verifyLogoutAfterProductAndCartNavigation() {
 
         ProductPage product = new ProductPage(driver);
@@ -179,7 +179,7 @@ public class Hamberger_TestCase extends BaseClass {
 
     // TC-HAM-09
     // Verify Reset App State after adding/removing products
-    @Test
+    @Test(priority=9)
     public void verifyResetAfterCartStateTransitions() {
 
         ProductPage product = new ProductPage(driver);
@@ -223,7 +223,7 @@ public class Hamberger_TestCase extends BaseClass {
 
     // TC-HAM-10
     // Verify Reset App State boundary states
-    @Test
+    @Test(priority=10)
     public void verifyResetAppStateBoundaryStates() {
 
         ProductPage product = new ProductPage(driver);
@@ -264,7 +264,7 @@ public class Hamberger_TestCase extends BaseClass {
 
     // TC-HAM-11
     // Complete Hamburger menu workflow
-    @Test
+    @Test(priority=11)
     public void completeHamburgerMenuWorkflow() {
 
         ProductPage product = new ProductPage(driver);
@@ -284,8 +284,8 @@ public class Hamberger_TestCase extends BaseClass {
         Assert.assertTrue(hamburger.isResetAppStateDisplayed(),
                 "Reset App State option is not displayed");
 
-        // Close/open menu through product page navigation
-        product.getHamburger().click();
+        // Close Hamburger menu
+        hamburger.closeMenu();
 
         // Add product
         product.addFirstProductToCart();
