@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ecomSwaglabsLogin.TestCase1">
+      <class name="ecomSwaglabsproducts.Product_TestCase">
         <methods>
+          <include name="closeBrowser"/>
           <include name="dbConnection"/>
-          <include name="invalidLoginTest" invocation-numbers="0 1 2 3 4"/>
           <include name="navigateTOApp"/>
+          <include name="verifyAddToCartAfterChangingFilter" invocation-numbers="6 7 8 9 10 11 12"/>
           <include name="bt"/>
-          <include name="validLoginTest" invocation-numbers="3 4"/>
         </methods>
-      </class> <!-- ecomSwaglabsLogin.TestCase1 -->
+      </class> <!-- ecomSwaglabsproducts.Product_TestCase -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
