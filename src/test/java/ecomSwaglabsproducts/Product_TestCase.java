@@ -22,7 +22,7 @@ public class Product_TestCase extends BaseClass {
     // TC-PROD-01
     // Verify products are visible on Product Page
     // =========================================================
-    @Test(priority=1,groups = {"FT", "SMT", "Pos"})
+    @Test(priority=1,groups = {"FT", "Pos"})
     public void verifyProductsAreVisible() {
 
         ProductPage pp = new ProductPage(driver);
@@ -70,7 +70,7 @@ public class Product_TestCase extends BaseClass {
     // =========================================================
     @Test(priority=2,
             dataProvider = "ProductName",
-            groups = {"FT", "SMT", "Pos"}
+            	groups = {"FT", "Pos"}
     )
     public void verifyAddToCartAndCartLogo(String productName) {
 
@@ -102,7 +102,7 @@ public class Product_TestCase extends BaseClass {
     // =========================================================
     @Test(priority=3,
             dataProvider = "ProductName",
-            groups = {"FT", "Pos"}
+            	groups = {"Integration"}
     )
     public void verifyProductPageToCartPage(String productName) {
 
@@ -140,7 +140,7 @@ public class Product_TestCase extends BaseClass {
     // =========================================================
     @Test(priority=4,
             dataProvider = "ProductName",
-            groups = {"FT", "Neg"}
+            	groups = {"FT", "Neg"}
     )
     public void verifyAddToCartAfterProductRemoval(String productName) {
 
@@ -231,7 +231,7 @@ public class Product_TestCase extends BaseClass {
     // =========================================================
     @Test(priority=6,
             dataProvider = "ProductName",
-            groups = {"FT", "SMT", "Pos"}
+            	groups = {"SMT", "Pos"}
     )
     public void productPageSmokeTest(String productName) {
 
@@ -257,7 +257,7 @@ public class Product_TestCase extends BaseClass {
     // TC-PROD-07
     // Filter dropdown smoke test
     // =========================================================
-    @Test(priority=7,groups = {"FT", "SMT", "Pos"})
+    @Test(priority=7,groups = {"SMT", "Pos"})
     public void verifyFilterDropdownSmokeTest() {
 
         ProductPage pp = new ProductPage(driver);
@@ -283,7 +283,7 @@ public class Product_TestCase extends BaseClass {
     // TC-PROD-08
     // Verify product visibility after sorting
     // =========================================================
-    @Test(priority=8,groups = {"FT", "Pos"})
+    @Test(priority=8,groups = {"Regression", "Pos"})
     public void verifyProductVisibilityAfterSorting() {
 
         ProductPage pp = new ProductPage(driver);
@@ -420,7 +420,8 @@ public class Product_TestCase extends BaseClass {
     // =========================================================
     @Test(priority=9,
             dataProvider = "ProductName",
-            groups = {"FT", "Pos"}
+            	
+            groups = {"Regression", "Pos"}
     )
     public void verifyAddToCartAfterChangingFilter(
             String productName) {
@@ -455,7 +456,7 @@ public class Product_TestCase extends BaseClass {
     // =========================================================
     @Test(priority=10,
             dataProvider = "ProductName",
-            groups = {"FT", "Pos"}
+            	groups = {"BVA"}
     )
     public void verifyCartLogoBoundaryState(
             String productName) {

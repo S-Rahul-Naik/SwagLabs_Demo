@@ -14,13 +14,12 @@ import genericUtility.ExcelUtility;
 
 public class Login_TestCase extends LoginBaseClass {
 
-
     // ============================================================
     // TC-LOGIN-01
-    // Verify Username, Password and Login controls are displayed
+    // Functionality
     // ============================================================
 
-    @Test(priority=1,groups = {"FT", "SMT", "Pos"})
+    @Test(priority = 1, groups = {"FT", "Pos"})
     public void verifyLoginControlsDisplayed() {
 
         LoginPage lp = new LoginPage(driver);
@@ -60,12 +59,13 @@ public class Login_TestCase extends LoginBaseClass {
 
     // ============================================================
     // TC-LOGIN-02
-    // Verify login with valid credentials
+    // Functionality + Smoke
     // ============================================================
 
-    @Test(priority=2,
-            dataProvider = "ValidCredentials",
-            groups = {"FT", "SMT", "Pos"}
+    @Test(
+        priority = 2,
+        dataProvider = "ValidCredentials",
+        groups = {"FT", "Pos"}
     )
     public void validLoginTest(
             String username,
@@ -90,12 +90,14 @@ public class Login_TestCase extends LoginBaseClass {
 
     // ============================================================
     // TC-LOGIN-03
-    // Verify Login navigates to Product Page
+    // Integration + Smoke
+    // Login → Product Page
     // ============================================================
 
-    @Test(priority=3,
-            dataProvider = "ValidCredentials",
-            groups = {"FT", "Pos"}
+    @Test(
+        priority = 3,
+        dataProvider = "ValidCredentials",
+        groups = {"Integration"}
     )
     public void verifyLoginNavigatesToProductPage(
             String username,
@@ -133,17 +135,18 @@ public class Login_TestCase extends LoginBaseClass {
 
     // ============================================================
     // TC-LOGIN-04
-    // Verify login with invalid username
+    // Negative
+    // Invalid Username
     //
     // TC-LOGIN-05
-    // Verify login with invalid password
-    //
-    // Both are covered by InvalidData Excel sheet.
+    // Negative
+    // Invalid Password
     // ============================================================
 
-    @Test(priority=4,
-            dataProvider = "InvalidCredentials",
-            groups = {"FT", "Neg"}
+    @Test(
+        priority = 4,
+        dataProvider = "InvalidCredentials",
+        groups = {"FT", "Neg"}
     )
     public void invalidLoginTest(
             String username,
@@ -180,17 +183,18 @@ public class Login_TestCase extends LoginBaseClass {
 
     // ============================================================
     // TC-LOGIN-06
-    // Verify login with blank username
+    // Negative
+    // Blank Username
     //
     // TC-LOGIN-07
-    // Verify login with blank password
-    //
-    // Blank values come ONLY from Excel.
+    // Negative
+    // Blank Password
     // ============================================================
 
-    @Test(priority=5,
-            dataProvider = "BlankLoginData",
-            groups = {"FT", "Neg"}
+    @Test(
+        priority = 5,
+        dataProvider = "BlankLoginData",
+        groups = {"FT", "Neg"}
     )
     public void blankLoginTest(
             String username,
@@ -211,12 +215,13 @@ public class Login_TestCase extends LoginBaseClass {
 
     // ============================================================
     // TC-LOGIN-08
-    // Verify Login Smoke Test
+    // Smoke
     // ============================================================
 
-    @Test(priority=6,
-            dataProvider = "ValidCredentials",
-            groups = {"FT", "SMT", "Smoke", "Pos"}
+    @Test(
+        priority = 6,
+        dataProvider = "ValidCredentials",
+        groups = {"SMT", "Pos"}
     )
     public void loginSmokeTest(
             String username,
@@ -240,12 +245,13 @@ public class Login_TestCase extends LoginBaseClass {
 
     // ============================================================
     // TC-LOGIN-09
-    // Verify Login Regression after application changes
+    // Regression
     // ============================================================
 
-    @Test(priority=7,
-            dataProvider = "ValidCredentials",
-            groups = {"FT", "Regression", "Pos"}
+    @Test(
+        priority = 7,
+        dataProvider = "ValidCredentials",
+        groups = {"Regression", "Pos"}
     )
     public void loginRegressionTest(
             String username,
@@ -283,12 +289,13 @@ public class Login_TestCase extends LoginBaseClass {
 
     // ============================================================
     // TC-LOGIN-10
-    // Verify Login input at boundary conditions
+    // BVA
     // ============================================================
 
-    @Test(priority=8,
-            dataProvider = "BoundaryLoginData",
-            groups = {"FT", "BVA"}
+    @Test(
+        priority = 8,
+        dataProvider = "BoundaryLoginData",
+        groups = {"BVA"}
     )
     public void loginBoundaryTest(
             String username,
@@ -297,14 +304,6 @@ public class Login_TestCase extends LoginBaseClass {
         LoginPage lp = new LoginPage(driver);
 
         lp.login(username, password);
-
-        /*
-         * Boundary data is expected to be handled without
-         * application crash.
-         *
-         * If authentication fails, error message should appear.
-         * If authentication succeeds, Product Page should appear.
-         */
 
         boolean productPageDisplayed = false;
         boolean errorDisplayed = false;
@@ -336,6 +335,8 @@ public class Login_TestCase extends LoginBaseClass {
                 "Boundary input was not handled correctly"
         );
 
-        System.out.println("Boundary login input handled successfully");
+        System.out.println(
+                "Boundary login input handled successfully"
+        );
     }
 }

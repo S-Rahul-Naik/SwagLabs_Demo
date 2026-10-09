@@ -24,17 +24,50 @@ public class ExcelUtility {
 		}
 		return ob;
 	}
-	public Object[][] InvalidCredentials() throws EncryptedDocumentException, IOException{
-		FileInputStream fis = new FileInputStream("./src/test/resources/LoginValidInvalidCreditional.xlsx");
-		Workbook wb = WorkbookFactory.create(fis);
-		Sheet sh = wb.getSheet("InvalidData");
-		Object[][] ob = new Object[sh.getLastRowNum()][2];
-		for(int i=0;i<sh.getLastRowNum();i++) {
-			for(int j=0;j<2;j++) {
-				ob[i][j]=sh.getRow(i+1).getCell(j).getStringCellValue();
-			}
-		}
-		return ob;
+	public Object[][] InvalidCredentials()
+	        throws EncryptedDocumentException, IOException {
+
+	    FileInputStream fis =
+	            new FileInputStream(
+	                    "./src/test/resources/LoginValidInvalidCreditional.xlsx");
+
+	    Workbook wb = WorkbookFactory.create(fis);
+
+	    Sheet sh = wb.getSheet("InvalidData");
+
+	    DataFormatter formatter = new DataFormatter();
+
+	    ArrayList<Object[]> data = new ArrayList<>();
+
+	    for (int i = 1; i <= sh.getLastRowNum(); i++) {
+
+	        Row row = sh.getRow(i);
+
+	        if (row == null) {
+	            continue;
+	        }
+
+	        String username =
+	                formatter.formatCellValue(row.getCell(0)).trim();
+
+	        String password =
+	                formatter.formatCellValue(row.getCell(1)).trim();
+
+	        // Skip completely empty rows
+	        if (username.isEmpty() && password.isEmpty()) {
+	            continue;
+	        }
+
+	        data.add(new Object[] {
+	                username,
+	                password
+	        });
+	    }
+
+	    wb.close();
+	    fis.close();
+
+	    return data.toArray(new Object[0][2]);
 	}
 	public Object[][] BlankLoginData()
 	        throws EncryptedDocumentException, IOException {
@@ -49,33 +82,38 @@ public class ExcelUtility {
 
 	    DataFormatter formatter = new DataFormatter();
 
-	    Object[][] ob =
-	            new Object[sh.getLastRowNum()][2];
+	    ArrayList<Object[]> data = new ArrayList<>();
 
-	    for (int i = 0; i < sh.getLastRowNum(); i++) {
+	    for (int i = 1; i <= sh.getLastRowNum(); i++) {
 
-	        for (int j = 0; j < 2; j++) {
+	        Row row = sh.getRow(i);
 
-	            if (sh.getRow(i + 1) == null ||
-	                sh.getRow(i + 1).getCell(j) == null) {
-
-	                ob[i][j] = "";
-
-	            } else {
-
-	                ob[i][j] =
-	                        formatter.formatCellValue(
-	                                sh.getRow(i + 1).getCell(j));
-	            }
+	        if (row == null) {
+	            continue;
 	        }
+
+	        String username =
+	                formatter.formatCellValue(row.getCell(0)).trim();
+
+	        String password =
+	                formatter.formatCellValue(row.getCell(1)).trim();
+
+	        // Skip completely empty rows
+	        if (username.isEmpty() && password.isEmpty()) {
+	            continue;
+	        }
+
+	        data.add(new Object[] {
+	                username,
+	                password
+	        });
 	    }
 
 	    wb.close();
 	    fis.close();
 
-	    return ob;
+	    return data.toArray(new Object[0][2]);
 	}
-
 
 	public Object[][] BoundaryLoginData()
 	        throws EncryptedDocumentException, IOException {
@@ -152,31 +190,43 @@ public class ExcelUtility {
 
 	    DataFormatter formatter = new DataFormatter();
 
-	    Object[][] ob =
-	            new Object[sh.getLastRowNum()][3];
+	    ArrayList<Object[]> data = new ArrayList<>();
 
-	    for (int i = 0; i < sh.getLastRowNum(); i++) {
+	    for (int i = 1; i <= sh.getLastRowNum(); i++) {
 
-	        for (int j = 0; j < 3; j++) {
+	        Row row = sh.getRow(i);
 
-	            if (sh.getRow(i + 1) == null ||
-	                sh.getRow(i + 1).getCell(j) == null) {
-
-	                ob[i][j] = "";
-
-	            } else {
-
-	                ob[i][j] =
-	                        formatter.formatCellValue(
-	                                sh.getRow(i + 1).getCell(j));
-	            }
+	        if (row == null) {
+	            continue;
 	        }
+
+	        String firstName =
+	                formatter.formatCellValue(row.getCell(0));
+
+	        String lastName =
+	                formatter.formatCellValue(row.getCell(1));
+
+	        String postalCode =
+	                formatter.formatCellValue(row.getCell(2));
+
+	        // Skip completely empty rows
+	        if (firstName.trim().isEmpty()
+	                && lastName.trim().isEmpty()
+	                && postalCode.trim().isEmpty()) {
+	            continue;
+	        }
+
+	        data.add(new Object[] {
+	                firstName,
+	                lastName,
+	                postalCode
+	        });
 	    }
 
 	    wb.close();
 	    fis.close();
 
-	    return ob;
+	    return data.toArray(new Object[0][3]);
 	}
 	public Object[][] CheckoutNegativeData()
 	        throws EncryptedDocumentException, IOException {
@@ -216,6 +266,148 @@ public class ExcelUtility {
 	    fis.close();
 
 	    return ob;
+	}
+	public Object[][] CheckoutBlankFirstNameData()
+	        throws EncryptedDocumentException, IOException {
+
+	    FileInputStream fis =
+	            new FileInputStream(
+	                    "./src/test/resources/Checkout_YourInfo_TestData.xlsx");
+
+	    Workbook wb = WorkbookFactory.create(fis);
+
+	    Sheet sh = wb.getSheet("Negative Test Cases");
+
+	    DataFormatter formatter = new DataFormatter();
+
+	    ArrayList<Object[]> data = new ArrayList<>();
+
+	    for (int i = 1; i <= sh.getLastRowNum(); i++) {
+
+	        Row row = sh.getRow(i);
+
+	        if (row == null) {
+	            continue;
+	        }
+
+	        String firstName =
+	                formatter.formatCellValue(row.getCell(0));
+
+	        String lastName =
+	                formatter.formatCellValue(row.getCell(1));
+
+	        String postalCode =
+	                formatter.formatCellValue(row.getCell(2));
+
+	        if (firstName.trim().isEmpty()) {
+	            data.add(new Object[] {
+	                    firstName,
+	                    lastName,
+	                    postalCode
+	            });
+	        }
+	    }
+
+	    wb.close();
+	    fis.close();
+
+	    return data.toArray(new Object[0][3]);
+	}
+
+
+	public Object[][] CheckoutBlankLastNameData()
+	        throws EncryptedDocumentException, IOException {
+
+	    FileInputStream fis =
+	            new FileInputStream(
+	                    "./src/test/resources/Checkout_YourInfo_TestData.xlsx");
+
+	    Workbook wb = WorkbookFactory.create(fis);
+
+	    Sheet sh = wb.getSheet("Negative Test Cases");
+
+	    DataFormatter formatter = new DataFormatter();
+
+	    ArrayList<Object[]> data = new ArrayList<>();
+
+	    for (int i = 1; i <= sh.getLastRowNum(); i++) {
+
+	        Row row = sh.getRow(i);
+
+	        if (row == null) {
+	            continue;
+	        }
+
+	        String firstName =
+	                formatter.formatCellValue(row.getCell(0));
+
+	        String lastName =
+	                formatter.formatCellValue(row.getCell(1));
+
+	        String postalCode =
+	                formatter.formatCellValue(row.getCell(2));
+
+	        if (lastName.trim().isEmpty()) {
+	            data.add(new Object[] {
+	                    firstName,
+	                    lastName,
+	                    postalCode
+	            });
+	        }
+	    }
+
+	    wb.close();
+	    fis.close();
+
+	    return data.toArray(new Object[0][3]);
+	}
+
+
+	public Object[][] CheckoutInvalidPostalCodeData()
+	        throws EncryptedDocumentException, IOException {
+
+	    FileInputStream fis =
+	            new FileInputStream(
+	                    "./src/test/resources/Checkout_YourInfo_TestData.xlsx");
+
+	    Workbook wb = WorkbookFactory.create(fis);
+
+	    Sheet sh = wb.getSheet("Negative Test Cases");
+
+	    DataFormatter formatter = new DataFormatter();
+
+	    ArrayList<Object[]> data = new ArrayList<>();
+
+	    for (int i = 1; i <= sh.getLastRowNum(); i++) {
+
+	        Row row = sh.getRow(i);
+
+	        if (row == null) {
+	            continue;
+	        }
+
+	        String firstName =
+	                formatter.formatCellValue(row.getCell(0));
+
+	        String lastName =
+	                formatter.formatCellValue(row.getCell(1));
+
+	        String postalCode =
+	                formatter.formatCellValue(row.getCell(2));
+
+	        if (!postalCode.matches("\\d{6}")) {
+	            data.add(new Object[] {
+	                    firstName,
+	                    lastName,
+	                    postalCode
+	            });
+	        }
+	    }
+
+	    wb.close();
+	    fis.close();
+
+	    return data.toArray(new Object[0][3]);
 	}
 	public Object[][] CheckoutBoundaryData()
 	        throws EncryptedDocumentException, IOException {

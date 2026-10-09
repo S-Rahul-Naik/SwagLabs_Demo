@@ -1,6 +1,7 @@
 package ecomSwaglabsCheckout;
 
 import org.testng.Assert;
+
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -40,7 +41,7 @@ public class Checkout_TestCase extends BaseClass {
     // Verify Checkout Information fields and controls
     // =========================================================
 
-    @Test(priority=1)
+    @Test(priority=1,groups = {"FT", "Pos"})
     public void verifyCheckoutInformationFields() {
 
         goToCheckoutInformation();
@@ -74,7 +75,7 @@ public class Checkout_TestCase extends BaseClass {
     // Verify valid checkout information is accepted
     // =========================================================
 
-    @Test(priority=2,dataProvider = "positiveCheckoutData")
+    @Test(priority=2,dataProvider = "positiveCheckoutData",groups = {"FT", "Pos"})
     public void verifyValidCheckoutInformation(
             String firstName,
             String lastName,
@@ -105,7 +106,7 @@ public class Checkout_TestCase extends BaseClass {
     // Verify Checkout Overview product visibility and controls
     // =========================================================
 
-    @Test(priority=3,dataProvider = "positiveCheckoutData")
+    @Test(priority=3,dataProvider = "positiveCheckoutData",groups = {"FT", "Pos"})
     public void verifyCheckoutOverview(
             String firstName,
             String lastName,
@@ -145,7 +146,7 @@ public class Checkout_TestCase extends BaseClass {
     // Verify Checkout Complete page and Back Home
     // =========================================================
 
-    @Test(priority=4,dataProvider = "positiveCheckoutData")
+    @Test(priority=4,dataProvider = "positiveCheckoutData",groups = {"FT", "Pos"})
     public void verifyCheckoutCompleteAndBackHome(
             String firstName,
             String lastName,
@@ -194,7 +195,7 @@ public class Checkout_TestCase extends BaseClass {
     // Checkout Information → Overview integration
     // =========================================================
 
-    @Test(priority=5,dataProvider = "positiveCheckoutData")
+    @Test(priority=5,dataProvider = "positiveCheckoutData",groups = {"Integration"})
     public void verifyCheckoutInformationToOverview(
             String firstName,
             String lastName,
@@ -228,7 +229,7 @@ public class Checkout_TestCase extends BaseClass {
     // Overview → Complete integration
     // =========================================================
 
-    @Test(priority=6,dataProvider = "positiveCheckoutData")
+    @Test(priority=6,dataProvider = "positiveCheckoutData",groups = {"Integration"})
     public void verifyOverviewToComplete(
             String firstName,
             String lastName,
@@ -264,7 +265,7 @@ public class Checkout_TestCase extends BaseClass {
     // Complete → Home integration
     // =========================================================
 
-    @Test(priority=7,dataProvider = "positiveCheckoutData")
+    @Test(priority=7,dataProvider = "positiveCheckoutData",groups = {"Integration"})
     public void verifyCompleteToHome(
             String firstName,
             String lastName,
@@ -305,7 +306,7 @@ public class Checkout_TestCase extends BaseClass {
     // Blank First Name
     // =========================================================
 
-    @Test(priority=8,dataProvider = "negativeCheckoutData")
+    @Test(priority=8,dataProvider = "blankFirstNameData",groups = {"FT", "Neg"})
     public void verifyBlankFirstName(
             String firstName,
             String lastName,
@@ -336,7 +337,7 @@ public class Checkout_TestCase extends BaseClass {
     // Blank Last Name
     // =========================================================
 
-    @Test(priority=9,dataProvider = "negativeCheckoutData")
+    @Test(priority=9,dataProvider = "blankLastNameData",groups = {"FT", "Neg"})
     public void verifyBlankLastName(
             String firstName,
             String lastName,
@@ -367,7 +368,7 @@ public class Checkout_TestCase extends BaseClass {
     // Invalid / Blank Postal Code
     // =========================================================
 
-    @Test(priority=10,dataProvider = "negativeCheckoutData")
+    @Test(priority=10,dataProvider = "invalidPostalCodeData",groups = {"FT", "Neg"})
     public void verifyInvalidPostalCode(
             String firstName,
             String lastName,
@@ -398,7 +399,7 @@ public class Checkout_TestCase extends BaseClass {
     // Checkout regression flow
     // =========================================================
 
-    @Test(priority=11,dataProvider = "positiveCheckoutData")
+    @Test(priority=11,dataProvider = "positiveCheckoutData",groups = {"Regression", "Pos"})
     public void checkoutRegressionFlow(
             String firstName,
             String lastName,
@@ -437,7 +438,7 @@ public class Checkout_TestCase extends BaseClass {
     // Complete system purchase flow
     // =========================================================
 
-    @Test(priority=12,dataProvider = "positiveCheckoutData")
+    @Test(priority=12,dataProvider = "positiveCheckoutData",groups = {"System"})
     public void completeSystemPurchaseFlow(
             String firstName,
             String lastName,
@@ -473,7 +474,7 @@ public class Checkout_TestCase extends BaseClass {
     // Boundary Value Analysis
     // =========================================================
 
-    @Test(priority=13,dataProvider = "boundaryCheckoutData")
+    @Test(priority=13,dataProvider = "boundaryCheckoutData",groups = {"BVA"})
     public void verifyCheckoutBoundaryValues(
             String firstName,
             String lastName,
@@ -514,11 +515,27 @@ public class Checkout_TestCase extends BaseClass {
     // NEGATIVE DATA PROVIDER
     // =========================================================
 
-    @DataProvider(name = "negativeCheckoutData")
-    public Object[][] negativeCheckoutData()
+    @DataProvider(name = "blankFirstNameData")
+    public Object[][] blankFirstNameData()
             throws Exception {
 
-        return eu.CheckoutNegativeData();
+        return eu.CheckoutBlankFirstNameData();
+    }
+
+
+    @DataProvider(name = "blankLastNameData")
+    public Object[][] blankLastNameData()
+            throws Exception {
+
+        return eu.CheckoutBlankLastNameData();
+    }
+
+
+    @DataProvider(name = "invalidPostalCodeData")
+    public Object[][] invalidPostalCodeData()
+            throws Exception {
+
+        return eu.CheckoutInvalidPostalCodeData();
     }
 
 

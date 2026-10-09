@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="BatchTestingSuite">
-  <test thread-count="5" name="Test">
+<suite name="Integration Testing Suite">
+
+    <test thread-count="5" name="Integration Testing">
+
+        <groups>
+            <run>
+                <include name="Integration"/>
+            </run>
+        </groups>
     <classes>
-      
+
       <class name="ecomSwaglabsLogin.Login_TestCase"/>
       <class name="ecomSwaglabsproducts.Product_TestCase"/>
       <class name="ecomSwaglabsCart.Cart_TestCase"/>

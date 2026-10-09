@@ -1,0 +1,187 @@
+<html>
+<head>
+<title>TestNG:  Smoke Test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Smoke Test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>13/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Fri Oct 09 11:17:07 IST 2026</td>
+</tr>
+<tr><td>Total time:</td><td>154 seconds (154348 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td>SMT </td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='ecomSwaglabsLogin.Login_TestCase.loginSmokeTest()'><b>loginSmokeTest</b><br>Test class: ecomSwaglabsLogin.Login_TestCase<br>Parameters: error_user, secret_sauce</td>
+<td></td>
+<td>2</td>
+<td>ecomSwaglabsLogin.Login_TestCase@139982de</td></tr>
+<tr>
+<td title='ecomSwaglabsLogin.Login_TestCase.loginSmokeTest()'><b>loginSmokeTest</b><br>Test class: ecomSwaglabsLogin.Login_TestCase<br>Parameters: visual_user, secret_sauce</td>
+<td></td>
+<td>2</td>
+<td>ecomSwaglabsLogin.Login_TestCase@139982de</td></tr>
+<tr>
+<td title='ecomSwaglabsLogin.Login_TestCase.loginSmokeTest()'><b>loginSmokeTest</b><br>Test class: ecomSwaglabsLogin.Login_TestCase<br>Parameters: problem_user, secret_sauce</td>
+<td></td>
+<td>2</td>
+<td>ecomSwaglabsLogin.Login_TestCase@139982de</td></tr>
+<tr>
+<td title='ecomSwaglabsproducts.Product_TestCase.productPageSmokeTest()'><b>productPageSmokeTest</b><br>Test class: ecomSwaglabsproducts.Product_TestCase<br>Parameters: Sauce Labs Bike Light<br/>
+<a href="#Output-47925969" onClick='toggleBox("Output-47925969", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-47925969" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-47925969">
+Product Page smoke test passed<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>ecomSwaglabsproducts.Product_TestCase@41a2befb</td></tr>
+<tr>
+<td title='ecomSwaglabsHamburgerMenu.Hamberger_TestCase.resetAppStateSmokeTest()'><b>resetAppStateSmokeTest</b><br>Test class: ecomSwaglabsHamburgerMenu.Hamberger_TestCase</td>
+<td></td>
+<td>15</td>
+<td>ecomSwaglabsHamburgerMenu.Hamberger_TestCase@55b0dcab</td></tr>
+<tr>
+<td title='ecomSwaglabsHamburgerMenu.Hamberger_TestCase.hamburgerMenuSmokeTest()'><b>hamburgerMenuSmokeTest</b><br>Test class: ecomSwaglabsHamburgerMenu.Hamberger_TestCase</td>
+<td></td>
+<td>0</td>
+<td>ecomSwaglabsHamburgerMenu.Hamberger_TestCase@55b0dcab</td></tr>
+<tr>
+<td title='ecomSwaglabsCart.Cart_TestCase.verifyContinueShopping()'><b>verifyContinueShopping</b><br>Test class: ecomSwaglabsCart.Cart_TestCase<br/>
+<a href="#Output-1070319462" onClick='toggleBox("Output-1070319462", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1070319462" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1070319462">
+TC-CART-07 Passed<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>ecomSwaglabsCart.Cart_TestCase@6c40365c</td></tr>
+<tr>
+<td title='ecomSwaglabsLogin.Login_TestCase.loginSmokeTest()'><b>loginSmokeTest</b><br>Test class: ecomSwaglabsLogin.Login_TestCase<br>Parameters: standard_user, secret_sauce</td>
+<td></td>
+<td>2</td>
+<td>ecomSwaglabsLogin.Login_TestCase@139982de</td></tr>
+<tr>
+<td title='ecomSwaglabsproducts.Product_TestCase.productPageSmokeTest()'><b>productPageSmokeTest</b><br>Test class: ecomSwaglabsproducts.Product_TestCase<br>Parameters: Test.allTheThings() T-Shirt (Red)<br/>
+<a href="#Output-1692317071" onClick='toggleBox("Output-1692317071", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1692317071" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1692317071">
+Product Page smoke test passed<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>ecomSwaglabsproducts.Product_TestCase@41a2befb</td></tr>
+<tr>
+<td title='ecomSwaglabsLogin.Login_TestCase.loginSmokeTest()'><b>loginSmokeTest</b><br>Test class: ecomSwaglabsLogin.Login_TestCase<br>Parameters: performance_glitch_user, secret_sauce</td>
+<td></td>
+<td>7</td>
+<td>ecomSwaglabsLogin.Login_TestCase@139982de</td></tr>
+<tr>
+<td title='ecomSwaglabsCart.Cart_TestCase.cartSmokeTest()'><b>cartSmokeTest</b><br>Test class: ecomSwaglabsCart.Cart_TestCase<br/>
+<a href="#Output-137685382" onClick='toggleBox("Output-137685382", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-137685382" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-137685382">
+TC-CART-06 Passed<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>ecomSwaglabsCart.Cart_TestCase@6c40365c</td></tr>
+<tr>
+<td title='ecomSwaglabsproducts.Product_TestCase.productPageSmokeTest()'><b>productPageSmokeTest</b><br>Test class: ecomSwaglabsproducts.Product_TestCase<br>Parameters: Sauce Labs Backpack<br/>
+<a href="#Output-1547965072" onClick='toggleBox("Output-1547965072", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1547965072" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1547965072">
+Product Page smoke test passed<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>ecomSwaglabsproducts.Product_TestCase@41a2befb</td></tr>
+<tr>
+<td title='ecomSwaglabsproducts.Product_TestCase.verifyFilterDropdownSmokeTest()'><b>verifyFilterDropdownSmokeTest</b><br>Test class: ecomSwaglabsproducts.Product_TestCase<br/>
+<a href="#Output-1086017415" onClick='toggleBox("Output-1086017415", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1086017415" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1086017415">
+Filter dropdown smoke test passed<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>ecomSwaglabsproducts.Product_TestCase@41a2befb</td></tr>
+</table><p>
+</body>
+</html>

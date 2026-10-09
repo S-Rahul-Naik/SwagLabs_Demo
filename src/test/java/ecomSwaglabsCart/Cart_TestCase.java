@@ -16,7 +16,7 @@ public class Cart_TestCase extends BaseClass {
 
     // TC-CART-01
     // Verify added product is visible in Cart Page
-    @Test(priority = 1, groups = {"FT", "SMT"})
+    @Test(priority = 1, groups = {"FT", "Pos"})
     public void verifyAddedProductVisibleInCart() {
 
         ProductPage pp = new ProductPage(driver);
@@ -43,7 +43,7 @@ public class Cart_TestCase extends BaseClass {
 
     // TC-CART-02
     // Verify Remove, Checkout and Continue Shopping controls
-    @Test(priority = 2, groups = {"FT"})
+    @Test(priority = 2, groups = {"FT", "Pos"})
     public void verifyCartControls() {
 
         ProductPage pp = new ProductPage(driver);
@@ -80,7 +80,7 @@ public class Cart_TestCase extends BaseClass {
 
     // TC-CART-03
     // Verify Cart Page to Checkout Page
-    @Test(priority = 3, groups = {"FT"})
+    @Test(priority = 3, groups = {"Integration"})
     public void verifyCartToCheckout() {
 
         ProductPage pp = new ProductPage(driver);
@@ -108,7 +108,7 @@ public class Cart_TestCase extends BaseClass {
 
     // TC-CART-04
     // Verify empty cart
-    @Test(priority = 4, groups = {"Neg"})
+    @Test(priority = 4, groups = {"FT", "Neg"})
     public void verifyEmptyCart() {
 
         ProductPage pp = new ProductPage(driver);
@@ -131,7 +131,7 @@ public class Cart_TestCase extends BaseClass {
 
     // TC-CART-05
     // Verify removed product cannot remain as stale cart item
-    @Test(priority = 5, groups = {"Neg"})
+    @Test(priority = 5, groups = {"FT", "Neg"})
     public void verifyRemovedProductNotPresent() {
 
         ProductPage pp = new ProductPage(driver);
@@ -174,7 +174,7 @@ public class Cart_TestCase extends BaseClass {
 
     // TC-CART-06
     // Cart Page smoke test
-    @Test(priority = 6, groups = {"SMT"})
+    @Test(priority = 6, groups = {"SMT", "Pos"})
     public void cartSmokeTest() {
 
         ProductPage pp = new ProductPage(driver);
@@ -208,7 +208,7 @@ public class Cart_TestCase extends BaseClass {
 
     // TC-CART-07
     // Verify Continue Shopping
-    @Test(priority = 7, groups = {"SMT"})
+    @Test(priority = 7, groups = {"SMT", "Pos"})
     public void verifyContinueShopping() {
 
         ProductPage pp = new ProductPage(driver);
@@ -233,7 +233,7 @@ public class Cart_TestCase extends BaseClass {
 
     // TC-CART-08
     // Verify cart contents after returning from Product Page
-    @Test(priority = 8, groups = {"Regression"})
+    @Test(priority = 8, groups = {"Regression", "Pos"})
     public void verifyCartContentsAfterReturning() {
 
         ProductPage pp = new ProductPage(driver);
@@ -273,7 +273,7 @@ public class Cart_TestCase extends BaseClass {
 
     // TC-CART-09
     // Verify Remove after returning to Cart
-    @Test(priority = 9, groups = {"Regression"})
+    @Test(priority = 9, groups = {"Regression", "Pos"})
     public void verifyRemoveAfterReturningToCart() {
 
         ProductPage pp = new ProductPage(driver);

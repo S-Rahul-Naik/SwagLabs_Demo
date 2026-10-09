@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [CrossBrowserSuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test2(failed)">
+    <parameter name="browser" value="edge"/>
+    <classes>
+      <class name="ecomSwaglabsLogin.Login_TestCase">
+        <methods>
+          <include name="validLoginTest" invocation-numbers="4"/>
+          <include name="closeBrowser"/>
+          <include name="launchApplication"/>
+        </methods>
+      </class> <!-- ecomSwaglabsLogin.Login_TestCase -->
+      <class name="ecomSwaglabsHamburgerMenu.Hamberger_TestCase">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="dbConnection"/>
+          <include name="navigateTOApp"/>
+          <include name="bt"/>
+          <include name="completeHamburgerMenuWorkflow"/>
+        </methods>
+      </class> <!-- ecomSwaglabsHamburgerMenu.Hamberger_TestCase -->
+      <class name="ecomSwaglabsCheckout.Checkout_TestCase">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="dbConnection"/>
+          <include name="verifyCheckoutCompleteAndBackHome" invocation-numbers="0 1"/>
+          <include name="navigateTOApp"/>
+          <include name="bt"/>
+          <include name="verifyCheckoutInformationFields"/>
+        </methods>
+      </class> <!-- ecomSwaglabsCheckout.Checkout_TestCase -->
+      <class name="ecomSwaglabsproducts.Product_TestCase">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="dbConnection"/>
+          <include name="navigateTOApp"/>
+          <include name="bt"/>
+          <include name="verifyProductPageToCartPage" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- ecomSwaglabsproducts.Product_TestCase -->
+    </classes>
+  </test> <!-- Test2(failed) -->
+  <test thread-count="5" name="Test3(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="ecomSwaglabsLogin.Login_TestCase">
+        <methods>
+          <include name="loginSmokeTest"/>
+          <include name="loginRegressionTest"/>
+          <include name="loginBoundaryTest"/>
+          <include name="verifyLoginNavigatesToProductPage"/>
+          <include name="validLoginTest"/>
+          <include name="blankLoginTest"/>
+          <include name="closeBrowser"/>
+          <include name="invalidLoginTest"/>
+          <include name="verifyLoginControlsDisplayed"/>
+          <include name="launchApplication"/>
+        </methods>
+      </class> <!-- ecomSwaglabsLogin.Login_TestCase -->
+      <class name="ecomSwaglabsCart.Cart_TestCase">
+        <methods>
+          <include name="verifyCartQuantityBoundary"/>
+          <include name="verifyAddedProductVisibleInCart"/>
+          <include name="verifyEmptyCart"/>
+          <include name="navigateTOApp"/>
+          <include name="verifyRemovedProductNotPresent"/>
+          <include name="cartSmokeTest"/>
+          <include name="verifyCartToCheckout"/>
+          <include name="closeBrowser"/>
+          <include name="verifyCartContentsAfterReturning"/>
+          <include name="dbConnection"/>
+          <include name="verifyRemoveAfterReturningToCart"/>
+          <include name="verifyContinueShopping"/>
+          <include name="verifyCartControls"/>
+          <include name="bt"/>
+        </methods>
+      </class> <!-- ecomSwaglabsCart.Cart_TestCase -->
+      <class name="ecomSwaglabsCheckout.Checkout_TestCase">
+        <methods>
+          <include name="checkoutRegressionFlow"/>
+          <include name="verifyCheckoutInformationToOverview"/>
+          <include name="verifyValidCheckoutInformation"/>
+          <include name="verifyCheckoutCompleteAndBackHome"/>
+          <include name="navigateTOApp"/>
+          <include name="verifyInvalidPostalCode"/>
+          <include name="verifyCheckoutOverview"/>
+          <include name="verifyCheckoutBoundaryValues"/>
+          <include name="closeBrowser"/>
+          <include name="dbConnection"/>
+          <include name="verifyBlankFirstName"/>
+          <include name="verifyCompleteToHome"/>
+          <include name="completeSystemPurchaseFlow"/>
+          <include name="verifyBlankLastName"/>
+          <include name="bt"/>
+          <include name="verifyCheckoutInformationFields"/>
+          <include name="verifyOverviewToComplete"/>
+        </methods>
+      </class> <!-- ecomSwaglabsCheckout.Checkout_TestCase -->
+      <class name="ecomSwaglabsproducts.Product_TestCase">
+        <methods>
+          <include name="verifyCartLogoBoundaryState"/>
+          <include name="closeBrowser"/>
+          <include name="dbConnection"/>
+          <include name="verifyFilterDropdownSmokeTest"/>
+          <include name="navigateTOApp"/>
+          <include name="verifyAddToCartAfterChangingFilter"/>
+          <include name="productPageSmokeTest"/>
+          <include name="bt"/>
+          <include name="verifyEmptyCartNavigation"/>
+          <include name="verifyProductVisibilityAfterSorting"/>
+        </methods>
+      </class> <!-- ecomSwaglabsproducts.Product_TestCase -->
+    </classes>
+  </test> <!-- Test3(failed) -->
+</suite> <!-- Failed suite [CrossBrowserSuite] -->

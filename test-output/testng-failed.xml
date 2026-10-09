@@ -3,38 +3,12 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="ecomSwaglabsproducts.Product_TestCase">
-        <methods>
-          <include name="verifyCartLogoBoundaryState" invocation-numbers="6 7 8 9 10 11 12"/>
-          <include name="closeBrowser"/>
-          <include name="verifyAddToCartAndCartLogo" invocation-numbers="6 7 8 9 10 11 12"/>
-          <include name="dbConnection"/>
-          <include name="verifyAddToCartAfterProductRemoval" invocation-numbers="6 7 8 9 10 11 12"/>
-          <include name="navigateTOApp"/>
-          <include name="verifyAddToCartAfterChangingFilter" invocation-numbers="6 7 8 9 10 11 12"/>
-          <include name="productPageSmokeTest" invocation-numbers="6 7 8 9 10 11 12"/>
-          <include name="bt"/>
-          <include name="verifyProductPageToCartPage" invocation-numbers="6 7 8 9 10 11 12"/>
-        </methods>
-      </class> <!-- ecomSwaglabsproducts.Product_TestCase -->
-      <class name="ecomSwaglabsHamburgerMenu.Hamberger_TestCase">
-        <methods>
-          <include name="closeBrowser"/>
-          <include name="dbConnection"/>
-          <include name="navigateTOApp"/>
-          <include name="bt"/>
-          <include name="completeHamburgerMenuWorkflow"/>
-        </methods>
-      </class> <!-- ecomSwaglabsHamburgerMenu.Hamberger_TestCase -->
       <class name="ecomSwaglabsCheckout.Checkout_TestCase">
         <methods>
           <include name="closeBrowser"/>
           <include name="dbConnection"/>
-          <include name="verifyBlankFirstName" invocation-numbers="2 3 5 6 7 9 10"/>
-          <include name="verifyCheckoutCompleteAndBackHome" invocation-numbers="6"/>
+          <include name="verifyCheckoutCompleteAndBackHome" invocation-numbers="0"/>
           <include name="navigateTOApp"/>
-          <include name="verifyInvalidPostalCode" invocation-numbers="2 3 5 6 7 9 10"/>
-          <include name="verifyBlankLastName" invocation-numbers="2 3 5 6 7 9 10"/>
           <include name="bt"/>
         </methods>
       </class> <!-- ecomSwaglabsCheckout.Checkout_TestCase -->

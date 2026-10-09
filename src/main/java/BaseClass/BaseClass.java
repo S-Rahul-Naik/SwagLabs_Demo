@@ -26,21 +26,21 @@ public class BaseClass {
 
 	WebdriverUtility wu = new WebdriverUtility();
 	FileUtility fu = new FileUtility();
-	@BeforeSuite
+	@BeforeSuite(groups = {"SMT", "FT", "Integration", "Regression", "BVA", "System"})
 	public void dbConnection() {
 	    Reporter.log("Before Suite", true);
 	}
 
-	@BeforeTest
+	@BeforeTest(groups = {"SMT", "FT", "Integration", "Regression", "BVA", "System"})
 	public void bt() {
 	    Reporter.log("Before Test", true);
 	}
 
 	@Parameters("browser")
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void navigateTOApp(@Optional("chrome") String browser) throws Exception {
 
-	    Reporter.log("Before Class", true);
+	    Reporter.log("Before Method", true);
 
 	    driver = wu.launchBrowser(browser);
 
@@ -54,14 +54,14 @@ public class BaseClass {
 	    );
 	}
 
-	@AfterMethod
-	public void closeBrowser() throws InterruptedException {
+	@AfterMethod(groups = {"SMT", "FT", "Integration", "Regression", "BVA", "System"})
+	public void closeBrowser()  {
+
 	    if (driver != null) {
-	    		Thread.sleep(8000);
+	       
 	        driver.quit();
 	    }
 	}
-
 	
 //	@AfterClass
 //	public void Logout() {
