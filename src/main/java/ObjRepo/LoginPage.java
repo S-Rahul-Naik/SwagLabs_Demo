@@ -6,15 +6,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
-
-    WebDriver driver;
-
+	WebDriver driver;
     public LoginPage(WebDriver driver) {
-        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    // Username
+    // Username field
     @FindBy(xpath = "//input[@id='user-name']")
     private WebElement username;
 
@@ -22,7 +19,7 @@ public class LoginPage {
         return username;
     }
 
-    // Password
+    // Password field
     @FindBy(xpath = "//input[@id='password']")
     private WebElement password;
 
@@ -46,6 +43,7 @@ public class LoginPage {
         return errormsg;
     }
 
+    // Login method
     public void login(String un, String pwd) throws InterruptedException {
 
         username.clear();

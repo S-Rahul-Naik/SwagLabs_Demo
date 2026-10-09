@@ -10,13 +10,16 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HamburgerMenuPage {
-
-    WebDriver driver;
+	WebDriver driver;
     WebDriverWait wait;
 
     public HamburgerMenuPage(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        wait = new WebDriverWait(
+                driver,
+                Duration.ofSeconds(10)
+        );
+
         PageFactory.initElements(driver, this);
     }
 
@@ -25,6 +28,7 @@ public class HamburgerMenuPage {
     private WebElement allItems;
 
     public boolean isAllItemsDisplayed() {
+
         return wait.until(
                 ExpectedConditions.visibilityOf(allItems)
         ).isDisplayed();
@@ -35,12 +39,15 @@ public class HamburgerMenuPage {
     private WebElement logout;
 
     public boolean isLogoutDisplayed() {
+
         return wait.until(
                 ExpectedConditions.visibilityOf(logout)
         ).isDisplayed();
     }
 
+    // Click Logout
     public void getLogout() {
+
         wait.until(
                 ExpectedConditions.elementToBeClickable(logout)
         ).click();
@@ -51,20 +58,26 @@ public class HamburgerMenuPage {
     private WebElement resetAppState;
 
     public boolean isResetAppStateDisplayed() {
+
         return wait.until(
                 ExpectedConditions.visibilityOf(resetAppState)
         ).isDisplayed();
     }
 
+    // Click Reset App State
     public void resetAppState() {
+
         wait.until(
                 ExpectedConditions.elementToBeClickable(resetAppState)
         ).click();
     }
+
+    // Close Hamburger menu
     @FindBy(id = "react-burger-cross-btn")
     private WebElement closeMenu;
 
     public void closeMenu() {
+
         closeMenu.click();
     }
 }

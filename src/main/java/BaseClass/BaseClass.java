@@ -1,15 +1,8 @@
 package BaseClass;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Reporter;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
@@ -21,52 +14,65 @@ import genericUtility.FileUtility;
 import genericUtility.WebdriverUtility;
 
 public class BaseClass {
-	
-	public WebDriver driver = null;
 
-	WebdriverUtility wu = new WebdriverUtility();
-	FileUtility fu = new FileUtility();
-	@BeforeSuite(groups = {"SMT", "FT", "Integration", "Regression", "BVA", "System"})
-	public void dbConnection() {
-	    Reporter.log("Before Suite", true);
-	}
+    public WebDriver driver = null;
 
-	@BeforeTest(groups = {"SMT", "FT", "Integration", "Regression", "BVA", "System"})
-	public void bt() {
-	    Reporter.log("Before Test", true);
-	}
+    WebdriverUtility wu = new WebdriverUtility();
+    FileUtility fu = new FileUtility();
 
-	@Parameters("browser")
-	@BeforeMethod(alwaysRun = true)
-	public void navigateTOApp(@Optional("chrome") String browser) throws Exception {
+    // Runs before the complete test suite
+    @BeforeSuite(alwaysRun = true)
+    public void dbConnection() {
 
-	    Reporter.log("Before Method", true);
+        Reporter.log("Before Suite", true);
+    }
 
-	    driver = wu.launchBrowser(browser);
+    // Runs before the test tag in XML
+    @BeforeTest(alwaysRun = true)
+    public void bt() {
 
-	    driver.get(fu.getDataFromPropertyFile("url"));
+        Reporter.log("Before Test", true);
+    }
 
-	    LoginPage lp = new LoginPage(driver);
+    // Launch browser and login before every test
+    @Parameters("browser")
+    @BeforeMethod(alwaysRun = true)
+    public void navigateTOApp(
+            @Optional("chrome") String browser) throws Exception {
 
-	    lp.login(
-	        fu.getDataFromPropertyFile("username"),
-	        fu.getDataFromPropertyFile("password")
-	    );
-	}
+        Reporter.log("Before Method", true);
 
-	@AfterMethod(groups = {"SMT", "FT", "Integration", "Regression", "BVA", "System"})
-	public void closeBrowser()  {
+        driver = wu.launchBrowser(browser);
 
-	    if (driver != null) {
-	       
-	        driver.quit();
-	    }
-	}
-	
-//	@AfterClass
-//	public void Logout() {
-//		Reporter.log("Before Class",true);
-//		driver.quit();
-//	}
-	
+        driver.get(
+                fu.getDataFromPropertyFile("url")
+        );
+
+        LoginPage lp = new LoginPage(driver);
+
+        lp.login(
+                fu.getDataFromPropertyFile("username"),
+                fu.getDataFromPropertyFile("password")
+        );
+    }
+
+    // Close browser after every test
+    @AfterMethod(alwaysRun = true)
+    public void closeBrowser() {
+
+        System.out.println("========== AFTER METHOD START ==========");
+
+        if (driver != null) {
+
+            System.out.println("Closing browser...");
+
+            driver.quit();
+
+            driver = null;
+
+            System.out.println("Browser closed successfully.");
+        }
+
+        System.out.println("========== AFTER METHOD END ==========");
+    }
 }

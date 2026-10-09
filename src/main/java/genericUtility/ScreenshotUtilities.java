@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -17,9 +19,16 @@ public class ScreenshotUtilities {
         Path folderPath = Paths.get("screenshots");
         Files.createDirectories(folderPath);
 
-        File source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File source =
+                ((TakesScreenshot) driver)
+                .getScreenshotAs(OutputType.FILE);
 
-        Path destination = folderPath.resolve(fileName + ".png");
+        String timestamp =
+                LocalDateTime.now()
+                .format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss_SSS"));
+
+        Path destination =
+                folderPath.resolve(fileName + "_" + timestamp + ".png");
 
         Files.copy(source.toPath(), destination);
     }

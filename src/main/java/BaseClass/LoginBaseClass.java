@@ -16,24 +16,40 @@ public class LoginBaseClass {
     FileUtility fu = new FileUtility();
     WebdriverUtility wu = new WebdriverUtility();
 
+    // Open application before every login test
     @Parameters("browser")
-    @BeforeMethod(groups = {"SMT", "FT", "Integration", "Regression", "BVA", "System"})
-    public void launchApplication(@Optional("chrome")String browser) throws Exception {
+    @BeforeMethod(alwaysRun = true)
+    public void launchApplication(
+            @Optional("chrome") String browser) throws Exception {
+
+        System.out.println("========== BEFORE METHOD START ==========");
 
         driver = wu.launchBrowser(browser);
 
         driver.get(
-            fu.getDataFromPropertyFile("url")
+                fu.getDataFromPropertyFile("url")
         );
+
+        System.out.println("Login page opened successfully.");
     }
 
-    @AfterMethod(groups = {"SMT", "FT", "Integration", "Regression", "BVA", "System"})
-    public void closeBrowser() throws InterruptedException {
+    // Close browser after every login test
+    @AfterMethod(alwaysRun = true)
+    public void closeBrowser() {
+
+        System.out.println("========== AFTER METHOD START ==========");
 
         if (driver != null) {
-            
+
+            System.out.println("Closing browser...");
+
             driver.quit();
+
             driver = null;
+
+            System.out.println("Browser closed successfully.");
         }
+
+        System.out.println("========== AFTER METHOD END ==========");
     }
 }
